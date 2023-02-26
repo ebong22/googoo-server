@@ -9,6 +9,7 @@ class Invitation(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
+    val idKey: String,
 //    member: Member,
     var groom: String,
     var bridge: String,
@@ -39,7 +40,7 @@ class Invitation(
 //    lateinit var member: Member
 
     //@TODO MEMBER까지 넣어줘야 함
-    override fun toString(): String {
+    override fun toString(): String { //idKey는 제외 시켜야 함
         return "Invitation(id=$id, groom='$groom', bridge='$bridge', weddingDate=$weddingDate, adrress='$adrress', startDate=$startDate, endDate=$endDate, passWord='$passWord', video=$video, mainImg='$mainImg', subImg1='$subImg1', subImg2='$subImg2', subImg3='$subImg3', endImg='$endImg', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', endMessage='$endMessage')"
     }
 

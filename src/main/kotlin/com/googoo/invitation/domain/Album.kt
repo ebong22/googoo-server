@@ -8,7 +8,7 @@ class Album (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     invitation: Invitation,
-    var fileName: String,
+    val fileName: String,
     var dpSequence: Int
 ) {
 
