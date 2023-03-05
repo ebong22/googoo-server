@@ -9,7 +9,7 @@ import java.time.LocalDateTime
 
 data class InvitationDto (
 
-    val memberId: String,
+    val memberIdKey: String, // idKey(uuid)
     val groom: String,
     val bridge: String,
     val weddingDate: LocalDateTime,

@@ -10,7 +10,8 @@ class Invitation(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val idKey: String,
-//    member: Member,
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    var member: Member,
     var groom: String,
     var bridge: String,
     var weddingDate: LocalDateTime,

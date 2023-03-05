@@ -7,6 +7,7 @@ class Member (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
+    val idKey: String,
     var name: String,
     var tel: String,
     var mail: String,
