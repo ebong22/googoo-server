@@ -1,4 +1,4 @@
-package com.googoo.invitation.invitation
+package com.googoo.invitation.api.invitation
 
 import com.googoo.invitation.domain.Invitation
 import org.springframework.data.jpa.repository.JpaRepository
