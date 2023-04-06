@@ -11,25 +11,34 @@ import com.googoo.invitation.domain.enum.Relation
 import com.googoo.invitation.dto.InvitationDto
 import mu.KotlinLogging
 import net.bytebuddy.utility.RandomString
+import org.aspectj.lang.annotation.Before
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.BeforeEach
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
 
 
 @SpringBootTest
-//@Transactional
+@Transactional
 internal class InvitationServiceImplTest(
     @Autowired private val invitationService: InvitationService
     , @Autowired private val memberService: MemberService
 ) {
 
     private val logger = KotlinLogging.logger {}
+
+    @BeforeEach
+    fun saveBefore() {
+        val member = mockMember()
+        memberService.save(member)
+    }
 
     @Test
     fun findById() {
